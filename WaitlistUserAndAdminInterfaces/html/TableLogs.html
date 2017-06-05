@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bikechain User Logs</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- DataTables CSS File -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/dt/dt-1.10.8/datatables.min.css" />
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+</head>
+
+<body onload="UpdateLogs()" id="darker">
+    <div class="container">
+        <h2>Bikechain User Logs</h2>
+        <br><br>
+        <table id="logTable" class="display">
+            <thead>
+                <tr>
+                    <th>Bikechain ID</th>
+                    <th>Registration</th>
+                    <th>Phone Number Given</th>
+                    <th>Station Availability</th>
+                    <th>Arrival</th>
+                    <th>Logbook Signed</th>
+                    <th>NoShow</th>
+                    <th>Cancellation</th>
+                    <th>Forced Removal</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- Datables JS File -->
+    <script type="text/javascript" src="https://cdn.datatables.net/r/dt/dt-1.10.8/datatables.min.js"></script>
+    <!-- The javascript file holding all the functions invoked through the page loading -->
+    <script src="../javascript/scriptForExtraTables.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+/*Styling for the form*/
+hr {
+    height:0.1em;
+    background-color: black;
+}
+
+span#Big {
+    font-size: 20px;
+}
+
+input[type=text], input[type=tel] {
+    background-color: #D6D6D6;
+    color: black;
+}
+
+.glyphicon-user, .glyphicon-star{
+    color:red;
+}
+
+#FormReregister, #FormFirstTime{
+    background-color: #5BB59E;
+    color: black;
+    padding-top: 4em;
+    padding-bottom: 4em;
+}
+
+#FormReregister:hover, #FormFirstTime:hover{
+    background-color: #49917E;
+}
+
+#returnButton{
+    margin-top: 5em;
+} 
+
+/*Styling for the table*/
+#darker{
+    background-color:#F5F5F5;
+}
+
+tr.green{
+    background-color:#89E189;
+}
+
+tr.yellow{
+    background-color:#FFFFA5;
+}
+
+tr.red{
+    background-color:#FF9494;
+}
+
+#centerData{
+    text-align:center;
+}
+
+#buttonRight {
+    margin-top:0.5em;
+    padding:2em;
+}
+
+#aligningRightBtnGroup{
+    padding-top:0.7em;
+    padding-right:3em;
+    padding-left:3em;
+}
+
+#rightBtnGroupFatTop{
+    padding-top:1em;
+    padding-bottom:1em;
+    border-bottom-left-radius:0;
+    border-bottom-right-radius:0;
+}
+
+#rightBtnGroupFatBottom{
+    padding-top:1em;
+    padding-bottom:1em;
+    border-top-left-radius:0;
+    border-top-right-radius:0;
+}
+
+#errorAlertTwo{
+    display:none;
+}
+
+/*Styling for both*/
+h2 {
+    font-size: 3em;
+    text-align: center;
+}
+
+.displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th, td {
+    font-size: 18px;
+}
+
+.modal {
+    text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+    .modal:before {
+        display: inline-block;
+        vertical-align: middle;
+        content: " ";
+        height: 100%;
+    }
+}
+
+.modal-dialog {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+}
+
+#errorAlert{
+    display:none;
+}
+
+/*Styling for Statistics Page*/
+#stats{
+    display:none;
+}
+
+

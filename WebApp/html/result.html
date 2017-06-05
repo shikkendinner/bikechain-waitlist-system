@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../images/BikeChainLogoResized.png">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- Special font courtesy of Google Font Generator -->
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto+Condensed:700">
+    <!-- Custom stylesheet to add a nice background color and other configurations -->
+    <link rel="stylesheet" href="../css/BikechainWebAppStyle.css">
+
+    <title>Bikechain Waitlist WebApp</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h1 id="numberAhead">Please wait</h1>
+        <br>
+        <h4 id="support" class="support">while we check if you are on the list...</h4>
+        <br><br>
+        <h5 class="support">ID entered: <strong id="idInStorage">...</strong></h5>
+        <br>
+        <div class="inTheMiddle">
+            <button type="button" class="btn" id="orangeButton" onclick="returnToMainPage()">Change Bikechain ID</button>
+        </div>
+    </div>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- Searches for the email within the server database and displays the result to the user -->
+    <script src="../javascript/result.js"></script>
+
+</body>
+</html>

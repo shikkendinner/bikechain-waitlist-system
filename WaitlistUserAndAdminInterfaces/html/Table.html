@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bikechain WaitList Table</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+</head>
+
+<body onload="Update()" id="darker">
+    <div class="container">
+        <h2>Bikechain Waitlist</h2>
+        <div class="row">
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                <button class="btn btn-warning btn-lg displayed" onclick="Update()" id="buttonRight"><strong>Update the List</strong><br />Last update: <strong id="updateTime">0</strong> second(s)</button>
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                <img class="displayed" src="../images/bikechainsmall.png">
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4" id="aligningRightBtnGroup">
+                <div class="row">
+                    <div class="btn-group btn-group-justified btn-group-lg">
+                        <a href="Statistics.html" target="_blank" class="btn btn-primary" id="rightBtnGroupFatTop" role="button">Statistics</a>
+                        <a href="TableLogs.html" target="_blank" class="btn btn-primary" id="rightBtnGroupFatTop" role="button">Logs</a>
+                        <a href="TableNoShow.html" target="_blank" class="btn btn-primary" id="rightBtnGroupFatTop" role="button">No-Shows</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <button class="btn btn-block btn-lg btn-danger" id="rightBtnGroupFatBottom" role="button" onclick="flushWaitlist()">Flush Waitlist</button>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <table class="table" id="waitlistTable">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Timestamp</th>
+                    <th>Bikechain ID</th>
+                    <th>Call-Out Name</th>
+                    <th>Phone Number</th>
+                    <th id="centerData">Status</th>
+                </tr>
+            </thead>
+            <tbody id="waitlistTableBody"></tbody>
+        </table>
+        <div class="text-center">
+            <br />
+            <button class="btn btn-warning btn-lg" onclick="swapCustomers()">Swap Selected Rows</button>
+            <br />
+            <br />
+        </div>
+    </div>
+
+		<!--
+    <div id="loginModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title">Security Pin Required</h1>
+                </div>
+                <div class="modal-body">
+                    <form role="form" id="securityPass" onsubmit="return securityCheck()">
+                        <div class="form-group">
+                            <label for="psw">Enter the 4 character pin provided to you by the system admin:</label>
+                            <input type="password" class="form-control" id="psw" maxlength="4" required autofocus />
+                        </div>
+                        <button type="submit" class="btn btn-success btn-block">Access Administration Table</button>
+                        <br>
+                        <div class="alert alert-danger" id="errorAlert">
+                            <strong>Error!</strong> Please enter the correct pin
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <div id="flushModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title">Risky Action: Security Pin Required</h1>
+                </div>
+                <div class="modal-body">
+                    <p>This will remove all customers currently on the waitlist, and will close the page. Therefore, this action requires authentication and should only be used in an emergency or when the shop is closing.</p>
+                    <form role="form" id="securityPassTwo" onsubmit="return securityCheckForFlush()">
+                        <div class="form-group">
+                            <label for="pswTwo">Enter the 4 character pin provided to you by the system admin:</label>
+                            <input type="password" class="form-control" id="pswTwo" maxlength="4" required autofocus/>
+                        </div>
+                        <button type="submit" class="btn btn-success btn-block">Empty the Waitlist</button>
+                        <button type="reset" class="btn btn-primary btn-block" onclick="hideFlushModal()">Cancel</button>
+                        <br>
+                        <div class="alert alert-danger" id="errorAlertTwo">
+                            <strong>Error!</strong> Please enter the correct pin
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- The javascript file holding all the functions invoked through button clicks and the page loading -->
+    <script src="../javascript/scriptForTable.js"></script>
+</body>
+
+</html>

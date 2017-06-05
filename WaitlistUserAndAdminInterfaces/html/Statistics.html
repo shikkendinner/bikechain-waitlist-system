@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bikechain WaitList Statistics</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+</head>
+
+<body id="darker">
+    <div class="container">
+        <h2>Bikechain User Statistics</h2>
+        <br><br>
+        <h3>Please enter the dates between which you would like to view user statistics</h3>
+        <br>
+        <form class="form-inline" role="form" id="statForm" onsubmit="return getStats()">
+            <div class="form-group">
+                <label for="from">From: </label>
+                <input class="form-control" type="date" id="from" required />
+            </div>
+            <div class="form-group">
+                <label for="to"> To: </label>
+                <input class="form-control" type="date" id="to" required />
+            </div>
+            <label> </label>
+            <button class="btn btn-primary" type="submit">Calculate Statistics</button>
+        </form>
+        <br /><br />
+        <div id="stats">
+            <h4 id="textBeforeStats">Statistics for dates between <strong id="dateFrom"></strong> and <strong id="dateTo"></strong> :</h4>
+            <br />
+            <h4>Total Users: <strong id="totalUsers"></strong></h4>
+            <h4>Phone Numbers Provided: <strong id="gavePhoneNum"></strong></h4>
+            <h4>Total Arrived: <strong id="totalArrived"></strong></h4>
+            <h4>Total Logbook Signed: <strong id="logBook"></strong></h4>
+            <h4>Total No Shows: <strong id="totalNoShow"></strong></h4>
+            <h4>Total Cancelled: <strong id="totalCancelled"></strong></h4>
+            <h4>Total Users Flushed: <strong id="totalFlushed"></strong></h4>
+            <h4>Average Waiting Time: <strong id="waitingTime"></strong></h4>
+        </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- Webshim Javascript File (used to get input type date on Firefox) -->
+    <script src="../javascript/js-webshim/minified/polyfiller.js"></script>
+    <!-- The javascript file holding all the functions invoked through the making inputs -->
+    <script src="../javascript/scriptForStats.js"></script>
+</body>
+
+</html>

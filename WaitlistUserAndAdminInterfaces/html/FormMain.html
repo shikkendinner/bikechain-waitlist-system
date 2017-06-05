@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Bikechain Form Main </title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <br />
+            <img class="displayed" src="../images/bikechain.png">
+            <h1 class="text-center">Welcome</h1>
+            <h3 class="text-center"><strong id="people"></strong> currently on the waitlist</h3>
+            <!--<h3 class="text-center"><strong id="time"></strong> average waiting time</h3> -->
+            <hr />
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-md-6 col-lg-6">
+                <a href="FormNewUser.html" class="btn btn-lg displayed" role="button" id="FormFirstTime">First sign up<br /><br />OR<br /><br />Forgotten your Bikechain ID</a>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-6">
+                <a href="FormOldUser.html" class="btn btn-lg displayed" role="button" id="FormReregister"><br />Returning user<br /><br />(Need Bikechain ID)<br /><br /></a>
+            </div>
+        </div>
+        <br><br>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- Script that identifies the total number of people on the waitlist -->
+    <script src="../javascript/scriptForFormMainPage.js"></script>
+</body>
+</html>

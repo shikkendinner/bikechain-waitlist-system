@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+	<head> 
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="../images/BikeChainLogoResized.png">
+
+        <!-- Redirects to result page if email already stored in local data -->
+        <script src="../javascript/main.js"></script>
+
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+        <!-- Special font courtesy of Google Font Generator -->
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto+Condensed:700">
+
+        <!-- Custom stylesheet to add a nice background color and other configurations -->
+        <link rel="stylesheet" href="../css/BikechainWebAppStyle.css">
+
+		<title>Bikechain Waitlist WebApp</title>	
+	</head>
+	
+	<body>
+        <div class="container-fluid">
+            <h1 class="webAppTitle">
+                Waitlist Search
+                <img src="../images/BikeChainLogoResized.png" alt="Bikechain Logo" />
+            </h1>
+            <form class="encasedForm" role="form" onsubmit="return validateAndProceed()" action="result.html">
+                <div class="form-group">
+                    <label for="text">Enter the Bikechain ID you entered into the waitlist form:</label>
+                    <input type="text" class="form-control" pattern="[a-z0-9]{5,10}" maxlength="10" title=" only lowercase letters (a-z) and numbers allowed; the id must be 5-10 characters long" id="uniqueID" required autofocus/>
+                </div>
+                <button type="submit" class="btn" id="orangeButton">Search in waitlist</button> 
+                <br><br>
+                <div class="alert alert-danger" id="errorAlert">
+                    <strong>Error!</strong> Please enter a Bikechain ID.
+                </div>
+            </form>
+        </div>
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	</body>
+
+</html>

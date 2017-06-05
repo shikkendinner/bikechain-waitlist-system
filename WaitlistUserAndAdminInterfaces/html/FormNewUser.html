@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Bikechain Form New User </title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+</head>
+<body>
+    <form onsubmit="return ValidateFormNew()" id="register">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 col-md-4 col-lg-4">
+                    <a href="FormMain.html" class="btn btn-lg btn-success displayed" role="button" id="returnButton">Return to previous page</a>
+                </div>
+                <div class="col-sm-4 col-md-4 col-lg-4">
+                    <br />
+                    <img class="displayed" src="../images/bikechain.png">
+                </div>
+                <div class="col-sm-4 col-md-4 col-lg-4">
+                    <!-- Empty on purpose -->
+                </div>
+            </div>
+            <h1 class="text-center">Welcome New User!</h1> 
+            <hr />
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <div class="form-group">
+                        <span id="Big">
+                            Register a Bikechain ID to be able to check your position on the waitlist using the web app:<br /><br />(5-10 characters, only lowercase letters and numbers)
+                        </span>
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-star"></span></span>
+                            <input type="text" class="form-control input-lg" pattern="[a-z0-9]{5,10}" maxlength="10" title=" only lowercase letters (a-z) and numbers allowed; the id must be 5-10 characters long" placeholder="Bikechain ID (Required)" id="uniqueID" required autofocus>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <span id="Big">
+                            Enter your first name so that we can identify you when you arrive for your turn:
+                        </span>
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                            <input type="text" class="form-control input-lg" placeholder="First Name (Required)" id="fName" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <span id="Big">
+                            Enter a phone number so that we can notify you when it is your turn (excluding country code) - THIS IS OPTIONAL:
+                        </span>
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-earphone"></span></span>
+                            <input type="tel" class="form-control input-lg" pattern=".{14,}" title=" a standard 10 digit mobile phone number" placeholder="6474601234 (Optional)" id="num" onkeydown="backspacerDOWN(this,event)" onkeyup="backspacerUP(this,event)">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary btn-lg btn-block" type="Submit">Submit</button>
+                        <br><br>
+                        <div class="alert alert-danger" id="errorAlert">
+                            <strong>Error!</strong> The Bikechain ID and first name is required and must be entered appropriately
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!-- This is a pop up that will be shown once the user has been added to the waitlist, and will close itself and reload the page in a few seconds -->
+    <div id="successModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title">Success!</h1>
+                </div>
+                <div class="modal-body">
+                    <p>If you entered a phone number you will receive a text message soon to confirm your registration.</p>
+                    <p>You are at position <strong id="currentposition"></strong> on the waitlist.</p>
+                    <p>Please REMEMBER your Bikechain ID: <strong id="yourID"></strong></p> 
+                    <p>Use the ID on the webapp which is on the Bikechain website.</p>
+                    <p>Please park your bike at the stands outside if you want to wait at the shop.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- Script that validates the inputs to the form and registers user on the server -->
+    <script src="../javascript/scriptForForm.js"></script>
+    <!-- Script that dynamically corrects the phone number format to be (123) 456-7890 -->
+    <script src="../javascript/format.js"></script>
+</body>
+</html>

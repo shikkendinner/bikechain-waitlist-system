@@ -1,0 +1,53 @@
+body {
+    background-color: #335CD6;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.webAppTitle {
+    text-align: center;
+    color: white;
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 4em;
+}
+
+.encasedForm {
+    width: 75%;
+    margin-left: auto;
+    color: white;
+    margin-right: auto;
+}
+
+#orangeButton{
+    background-color:#FF6600;
+    color: white;
+}
+
+#orangeButton:hover, #orangeButton:active{
+    background-color:#EE6600;
+    color: white;
+}
+
+#numberAhead {
+    text-align: center;
+    color: white;
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 5em;
+}
+
+.support {
+    text-align: center;
+    color: white;
+    font-family: "Roboto Condensed", sans-serif;
+}
+
+.inTheMiddle {
+    text-align: center;
+}
+
+#errorAlert {
+    display: none;
+}
