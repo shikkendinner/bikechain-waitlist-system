@@ -1,1 +1,20 @@
-# bikechain-waitlist-system
+# Bikechain Complete Waitlist System
+This complete system was built for a non-profit organization called Bikechain, and located near University of Toronto. Bikechain are a hub for cycling activity by providing DIY services, affordable repairs, unique educational opportunities, and a welcoming community of staff and volunteers. Specifically the application was developed for their DIY service, where customers are provided the tools and help of experienced staff and volunteers to fix and maintain their own bikes.
+
+## The 3 Parts
+The project is broken down into three parts (folders). The WaitlistUserAndAdminInterfaces folder holds the static HTML pages with their JavaScript and CSS files that represent the interfaces with which customers and the administator interact. The WebApp folder holds the files for the web application that allows a customer to check their position on the waitlist (really similar to the [Android](https://github.com/shikkendinner/bikechain-android-app) application but without notifications). Finally, we have the master which manipulates all the data and stores it. The ServerBackend folder holds all the code for the backend.
+
+### User and Admin Interfaces
+These interfaces represent stand-alone HTML files that communicate directly with the backend to retrieve and modify any data on the waitlist (through AJAX requests). These files can be placed on any computer, and just require that the server be online and ready to receive/send requests. The files within the `html/` folder can broken down into two groups.
+
+#### Registration Interfaces
+The FormMain, FormNewUser, and FormOldUser html files represent the pages that allow a customer to register. The FormMain.html file would be displayed on a computer in a browser and would allow a customer to chose whether they are a returning or new user. They would then be transferred to either the FormNewUser or FormOldUser page, where they would be able to enter some information that would help identify them when it was their turn to service their bike on a stand. Two important pieces of information need to be provided for the best experience: the username and a mobile phone number (that can receive text messages). The username is mandatory as it is a unique way to identify a customer and allows a customer to check their position through the webapp. The phone number is optional as the system utilizes [Twilio](https://www.twilio.com/) to send a customer a text message once it is their turn to use a stand.
+
+#### Admin Interfaces
+The Table, TableNoShow, TableLogs, and Statistics html files represent the pages that allow a administrator to control the waitlist. While the other three are pages with different statistics, the Table.html is a visual display of the waitlist. It retrieves all the data from the server and refreshes every 30 seconds (with a refresh button if you want to refresh immediately). It also refreshes everytime there is a change made. A administrator can switch the position of customers on the waitlist, remove customers from the waitlist, and notify a customer when it is their turn to use a stand. Once a customer is notified, a request is sent to the server to send a text message through Twilio if a number was provided by that customer. A 5 minute countdown timer also begins until their turn is cancelled.
+
+### WebApp
+The webapp (this would sit on a website and can be accessed using any web browser) basically notifies a user of their position on the waitlist. They are asked to enter a username and if they are on the waitlist they are provided with their current position. If they are first but it is not their turn yet, the app would recommend the user to stay near the shop. If it is their turn, then they are told to head to the shop within 5 minutes or their turn will be cancelled. All this information is accessed through AJAX requests to the server and refreshed every 30 seconds. 
+
+### The Server
+The server handles any and all requests from the registration and admin interfaces, and the webapp. The server utilizes the [Bottle](http://bottlepy.org/docs/dev/) web framework (see app.py). All data is stored within an SQLite database. All text messages are sent utilizing Twilio's Python API.
